@@ -4,6 +4,8 @@
 This project focuses on the creation of a responsive image gallery, leveraging techniques in html, css, javascript, 
 and best practices by Yandex.
 
+[Page Link](https://black-milk.github.io/web_project_4/)
+
 **Todos**
 1. Fix positioning of `form__exit-button` for screen width less than 380px. Reviewer please advise!
 
