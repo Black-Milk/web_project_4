@@ -448,6 +448,12 @@
 }
 
 
+@media screen and (max-width: 380px) {
+    .form__exit-button {
+    /*TODO: figure out proper positioning of exit-button atop modal*/
+    }
+}
+
 .form__reset-button:hover {
     opacity: 0.8;
     cursor: url(../images/pointer-icon.png), auto;
@@ -498,7 +504,6 @@
         max-width: 238px;
     }
 }
-
 
 .form__submit-button {
     margin: 48px auto 36px;
