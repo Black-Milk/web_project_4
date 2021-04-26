@@ -1,7 +1,7 @@
 /*PAGE*/
 .page {
     margin: auto;
-    max-width: 1200px;
+    max-width: 1280px;
     box-sizing: border-box;
     background-color: #000000;
     color: #ffffff;
@@ -15,6 +15,7 @@
     -moz-text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
 }
+
 
 @media screen and (max-width: 768px) {
     .page {
@@ -151,7 +152,7 @@
 
 .profile__add-button {
     margin: 33px 0 0 auto;
-    border: 1px solid  #ffffff;
+    border: 1px solid #ffffff;
     border-radius: 2px;
     width: 150px;
     height: 50px;
@@ -229,3 +230,132 @@
     }
 }
 
+/*Cards Section*/
+
+.cards {
+    margin: 47px 0 67px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media screen and (min-width: 2040px) {
+    .cards {
+        width: 880px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .cards {
+        margin: 36px 0 28px 0;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .cards {
+        margin: 36px 20px 20px 20px;
+    }
+}
+
+
+.cards__grid {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    background-color: black;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 18px;
+    grid-row-gap: 21px;
+}
+
+@media screen and (max-width: 930px) {
+    .cards__grid {
+        grid-template-columns: 282px 282px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .cards__grid {
+        grid-template-columns: 282px;
+        grid-row-gap: 20px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .cards__grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.card {
+    height: 361px;
+    width: 282px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    position: relative;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 380px) {
+    .card {
+        margin-bottom: 20px;
+    }
+}
+
+.card__image {
+    width: 282px;
+    height: 282px;
+    border-radius: 10px 10px 0 0;
+    background-size: cover;
+}
+
+@media screen and (max-width: 480px) {
+    .card__image {
+        width: 100%;
+    }
+}
+
+
+.card__info {
+    display: flex;
+    align-items: center;
+}
+
+.card__title {
+    margin-left: 20px;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+
+}
+
+@media screen and (max-width: 375px) {
+    .card__title {
+        margin-left: 21px;
+    }
+}
+
+
+.card__like-button {
+    margin: 0 30px 0 auto;
+    background-color: #ffffff;
+    background-image: url('../images/heart-white.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: 0;
+    height: 18px;
+    width: 20px;
+    padding: 0;
+}
+
+.card__like-button:hover {
+    opacity: 0.5;
+    cursor: pointer;
+
+}
