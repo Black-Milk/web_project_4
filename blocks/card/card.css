@@ -1,0 +1,22 @@
+@import url(./__image/card__image.css);
+@import url(./__info/card__info.css);
+@import url(./__title/card__title.css);
+@import url(./__like-button/card__like-button.css);
+
+
+/*CARD*/
+.card {
+    height: 361px;
+    width: 282px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    position: relative;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 380px) {
+    .card {
+        margin-bottom: 20px;
+    }
+}

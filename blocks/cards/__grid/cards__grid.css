@@ -1,0 +1,32 @@
+/*CARDS GRID*/
+.cards__grid {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    background-color: black;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 18px;
+    grid-row-gap: 21px;
+}
+
+@media screen and (max-width: 930px) {
+    .cards__grid {
+        grid-template-columns: 282px 282px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .cards__grid {
+        grid-template-columns: 282px;
+        grid-row-gap: 20px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .cards__grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

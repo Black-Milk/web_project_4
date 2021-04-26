@@ -1,0 +1,26 @@
+@import url(./__container/form__container.css);
+@import url(./__exit-button/form__exit-button.css);
+@import url(./__header/form__header.css);
+@import url(./__fields/form__fields.css);
+@import url(./__input/form__input.css);
+@import url(./__submit-button/form__submit-button.css);
+
+
+/*FORM*/
+.form {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    background-color: #0000007a;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_visible {
+    display: flex;
+}

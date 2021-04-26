@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Around the US</title>
+    <meta
+            name="description"
+            content="Web Project 4 for Practicum Yandex"
+    />
+    <meta name="author" content="Edwin Montufar"/>
+    <link rel="stylesheet" href="pages/index.css">
+</head>
+<body class="page">
+<header class="header">
+    <a href="#"><img class="header__logo" src="./images/around-the-us.svg" alt="Around the US"></a>
+</header>
+<!--Main Content-->
+<main class="content">
+    <section class="profile">
+        <div class="profile__container">
+            <div class="profile__picture-container">
+                <img class=profile__picture src="./images/jacques-cousteau.jpg" alt="Jacques Costeau Portrait">
+            </div>
+            <div class="profile__info">
+                <div class="profile__text">
+                    <h1 class="profile__title">Jacques Cousteau</h1>
+                    <p class="profile__subtitle">Explorer</p>
+                </div>
+                <button class="profile__edit-button button"></button>
+            </div>
+        </div>
+        <button class="profile__add-button button"></button>
+    </section>
+    <section class="cards">
+        <ul class="cards__grid">
+            <li class="card">
+                <div class="card__image" style="background-image: url('./images/yosemite-valley.jpg');"
+                     title="Yosemite Valley"></div>
+                <div class="card__info">
+                    <h2 class="card__title">Yosemite Valley</h2>
+                    <button class="card__like-button"></button>
+                </div>
+            </li>
+            <li class="card">
+                <div class="card__image" style="background-image: url('./images/lake-louise.jpg');"
+                     title="Lake Louise"></div>
+                <div class="card__info">
+                    <h2 class="card__title">Lake Louise</h2>
+                    <button class="card__like-button"></button>
+                </div>
+            </li>
+            <li class="card">
+                <div class="card__image" style="background-image: url('./images/bald-mountains.jpg');"
+                     title="Bald Mountains"></div>
+                <div class="card__info">
+                    <h2 class="card__title">Bald Mountains</h2>
+                    <button class="card__like-button"></button>
+                </div>
+            </li>
+            <li class="card">
+                <div class="card__image" style="background-image: url('./images/latemar.jpg');" title="Latemar"></div>
+                <div class="card__info">
+                    <h2 class="card__title">Latemar</h2>
+                    <button class="card__like-button"></button>
+                </div>
+            </li>
+            <li class="card">
+                <div class="card__image" style="background-image: url('./images/vanois-national-park.jpg');"
+                     title="Vanois National"></div>
+                <div class="card__info">
+                    <h2 class="card__title">Vanois National...</h2>
+                    <button class="card__like-button"></button>
+                </div>
+            </li>
+            <li class="card">
+                <div class="card__image" style="background-image: url('./images/lago-di-braies.jpg');"
+                     title="Lago di Braies"></div>
+                <div class="card__info">
+                    <h2 class="card__title">Lago di Braies</h2>
+                    <button class="card__like-button"></button>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section class="form">
+        <form class="form__container" name="form__edit-profile" action="#">
+            <button class="form__exit-button" type="reset"></button>
+            <h2 class="form__header">Edit profile</h2>
+            <fieldset class="form__fields">
+                <label for="name">
+                    <input type="text" class="form__input form__title" id="name" name="name" placeholder="Name"
+                           value="Jacques Cousteau" required>
+                </label>
+                <label for="job">
+                    <input type="text" class="form__input form__subtitle" id="job" name="job" placeholder="Job"
+                           value="Explorer" required>
+                </label>
+                <button class="form__submit-button" type="submit" value="Save">Save</button>
+            </fieldset>
+        </form>
+    </section>
+</main>
+<footer class="footer">
+    <p class="footer__copyright">© 2021 Around The U.S.</p>
+</footer>
+<script src="./scripts/script.js"></script>
+</body>
+</html>

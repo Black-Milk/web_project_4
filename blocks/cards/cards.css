@@ -1,0 +1,27 @@
+@import url(./__grid/cards__grid.css);
+
+/*Cards Section*/
+.cards {
+    margin: 47px 0 67px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media screen and (min-width: 2040px) {
+    .cards {
+        width: 880px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .cards {
+        margin: 36px 0 28px 0;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .cards {
+        margin: 36px 20px 20px 20px;
+    }
+}
