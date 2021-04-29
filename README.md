@@ -7,7 +7,10 @@ and best practices by Yandex.
 [Page Link](https://black-milk.github.io/web_project_4/)
 
 **Todos**
-1. Fix positioning of `form__exit-button` for screen width less than 380px. Reviewer please advise!
+1. Fix positioning of `form__exit-button` for screen width less than 380px. 
+
+**Questions for Reviewer**
+1. Not sure what you mean by implementing the popup and popup container to contain the form and exit button separately. Can you please elaborate some more? I tried implementing this, but it made the nesting of more additional elements complicated, especially when trying to toggle the form via javascript.
 
 **Figma Specs**
 
@@ -49,9 +52,13 @@ HTML, CSS, & Javascript
 │   ├── __header
 │   │   └── form__header.css
 │   ├── __input
+│   │   ├── _subtitle
+│   │   ├── _title
 │   │   └── form__input.css
 │   ├── __submit-button
 │   │   └── form__submit-button.css
+│   ├── _visible
+│   │   └── form_visible.css
 │   └── form.css
 ├── header
 │   ├── __logo
@@ -73,7 +80,7 @@ HTML, CSS, & Javascript
     ├── __picture-container
     │   └── profile__picture-container.css
     ├── __subtitle
-    │   └── profile_subtitle.css
+    │   └── profile__subtitle.css
     ├── __text
     │   └── profile__text.css
     ├── __title

@@ -6,7 +6,7 @@
 @import url(./__info/profile__info.css);
 @import url(./__text/profile__text.css);
 @import url(./__title/profile__title.css);
-@import url(./__subtitle/profile_subtitle.css);
+@import url(./__subtitle/profile__subtitle.css);
 
 /*PROFILE SECTION*/
 .profile {
@@ -14,7 +14,7 @@
     max-width: 882px;
     width: 100%;
     margin: auto;
-    padding-top: 35px;
+    padding-top: 36px;
 }
 
 @media screen and (max-width: 730px) {
