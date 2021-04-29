@@ -20,7 +20,7 @@
 
 .profile__edit-button:hover {
     cursor: pointer;
-    /*for reviewer: the design specs do not show an opacity value
-    --this is inferred from the add-button*/
+    /*for reviewer: the design specs do not show an opacity value for this particular
+    button state; instead this was inferred from the opacity specification for add-button:hover*/
     opacity: .6;
 }
