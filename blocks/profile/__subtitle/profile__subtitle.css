@@ -20,3 +20,9 @@
         max-width: 201px;
     }
 }
+
+@media screen and (max-width: 490px){
+    .profile__subtitle{
+        margin-left: 0;
+    }
+}
