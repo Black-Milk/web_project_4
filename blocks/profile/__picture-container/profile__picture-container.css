@@ -5,3 +5,10 @@
     position: relative;
 
 }
+
+
+@media screen and (max-width: 480px) {
+    .profile__picture-container {
+        margin-right: 0;
+    }
+}
