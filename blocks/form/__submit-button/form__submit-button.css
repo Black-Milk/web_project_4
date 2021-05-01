@@ -1,5 +1,5 @@
 .form__submit-button {
-    margin: 48px auto 36px;
+    margin: 48px auto 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,7 +16,7 @@
 
 .form__submit-button:hover {
     opacity: 0.8;
-    cursor: url(../../../images/pointer-icon.png), auto;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 570px) {
