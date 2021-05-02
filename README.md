@@ -4,13 +4,7 @@
 This project focuses on the creation of a responsive image gallery, leveraging techniques in html, css, javascript, 
 and best practices by Yandex.
 
-[Page Link](https://black-milk.github.io/web_project_4/)
-
-**Todos**
-1. Fix positioning of `form__exit-button` for screen width less than 380px. 
-
-**Questions for Reviewer**
-1. Not sure what you mean by implementing the popup and popup container to contain the form and exit button separately. Can you please elaborate some more? I tried implementing this, but it made the nesting of more additional elements complicated, especially when trying to toggle the form via javascript.
+[Github Page Link](https://black-milk.github.io/web_project_4/)
 
 **Figma Specs**
 
@@ -30,7 +24,6 @@ HTML, CSS, & Javascript
 │   │   └── card__info.css
 │   ├── __like-button
 │   │   └── card__like-button.css
-│   ├── __text
 │   ├── __title
 │   │   └── card__title.css
 │   └── card.css
@@ -43,22 +36,17 @@ HTML, CSS, & Javascript
 │   │   └── footer__copyright.css
 │   └── footer.css
 ├── form
-│   ├── __container
-│   │   └── form__container.css
-│   ├── __exit-button
-│   │   └── form__exit-button.css
 │   ├── __fields
 │   │   └── form__fields.css
 │   ├── __header
 │   │   └── form__header.css
 │   ├── __input
-│   │   ├── _subtitle
-│   │   ├── _title
+│   │   ├── _text
+│   │   │   ├── form__input_text_subtitle.css
+│   │   │   └── form__input_text_title.css
 │   │   └── form__input.css
 │   ├── __submit-button
 │   │   └── form__submit-button.css
-│   ├── _visible
-│   │   └── form_visible.css
 │   └── form.css
 ├── header
 │   ├── __logo
@@ -66,6 +54,14 @@ HTML, CSS, & Javascript
 │   └── header.css
 ├── page
 │   └── page.css
+├── popup
+│   ├── __container
+│   │   └── popup__container.css
+│   ├── __exit-button
+│   │   └── popup__exit-button.css
+│   ├── _visible
+│   │   └── popup_visible.css
+│   └── popup.css
 └── profile
     ├── __add-button
     │   └── profile__add-button.css
@@ -86,5 +82,6 @@ HTML, CSS, & Javascript
     ├── __title
     │   └── profile__title.css
     └── profile.css
+
 ```
 
