@@ -33,55 +33,7 @@
         <button type="button" class="profile__add-button button"></button>
     </section>
     <section class="cards">
-        <ul class="cards__grid">
-            <li class="card">
-                <div class="card__image" style="background-image: url('./images/yosemite-valley.jpg');"
-                     title="Yosemite Valley"></div>
-                <div class="card__info">
-                    <h2 class="card__title">Yosemite Valley</h2>
-                    <button class="card__like-button" type="button"></button>
-                </div>
-            </li>
-            <li class="card">
-                <div class="card__image" style="background-image: url('./images/lake-louise.jpg');"
-                     title="Lake Louise"></div>
-                <div class="card__info">
-                    <h2 class="card__title">Lake Louise</h2>
-                    <button class="card__like-button" type="button"></button>
-                </div>
-            </li>
-            <li class="card">
-                <div class="card__image" style="background-image: url('./images/bald-mountains.jpg');"
-                     title="Bald Mountains"></div>
-                <div class="card__info">
-                    <h2 class="card__title">Bald Mountains</h2>
-                    <button class="card__like-button" type="button"></button>
-                </div>
-            </li>
-            <li class="card">
-                <div class="card__image" style="background-image: url('./images/latemar.jpg');" title="Latemar"></div>
-                <div class="card__info">
-                    <h2 class="card__title">Latemar</h2>
-                    <button class="card__like-button" type="button"></button>
-                </div>
-            </li>
-            <li class="card">
-                <div class="card__image" style="background-image: url('./images/vanois-national-park.jpg');"
-                     title="Vanois National"></div>
-                <div class="card__info">
-                    <h2 class="card__title">Vanois National Park</h2>
-                    <button class="card__like-button" type="button"></button>
-                </div>
-            </li>
-            <li class="card">
-                <div class="card__image" style="background-image: url('./images/lago-di-braies.jpg');"
-                     title="Lago di Braies"></div>
-                <div class="card__info">
-                    <h2 class="card__title">Lago di Braies</h2>
-                    <button class="card__like-button" type="button"></button>
-                </div>
-            </li>
-        </ul>
+        <ul class="cards__grid"></ul>
     </section>
 
     <div class="popup">
@@ -110,6 +62,16 @@
 <footer class="footer">
     <p class="footer__copyright">© 2021 Around The U.S.</p>
 </footer>
-<script src="./scripts/script.js"></script>
+<script src="./scripts/script.js" defer></script>
+<!--template elements-->
+<template id="card-template">
+    <li class="card">
+        <div class="card__image" style=""></div>
+        <div class="card__info">
+            <h2 class="card__title"></h2>
+            <button class="card__like-button" type="button"></button>
+        </div>
+    </li>
+</template>
 </body>
 </html>
