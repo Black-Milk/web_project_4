@@ -18,11 +18,15 @@ HTML, CSS, & Javascript
 **Project BEM Structure:**
 ```
 ├── card
+│   ├── __delete-button
+│   │   └── card__delete-button.css
 │   ├── __image
 │   │   └── card__image.css
 │   ├── __info
 │   │   └── card__info.css
 │   ├── __like-button
+│   │   ├── _active
+│   │   │   └── card__like-button_active.css
 │   │   └── card__like-button.css
 │   ├── __title
 │   │   └── card__title.css
@@ -56,9 +60,15 @@ HTML, CSS, & Javascript
 │   └── page.css
 ├── popup
 │   ├── __container
+│   │   ├── _content
+│   │   │   └── popup__container_content_preview.css
 │   │   └── popup__container.css
 │   ├── __exit-button
 │   │   └── popup__exit-button.css
+│   ├── __image
+│   │   └── popup__image.css
+│   ├── __image-title
+│   │   └── popup__image-title.css
 │   ├── _visible
 │   │   └── popup_visible.css
 │   └── popup.css
@@ -82,6 +92,7 @@ HTML, CSS, & Javascript
     ├── __title
     │   └── profile__title.css
     └── profile.css
+
 
 ```
 
