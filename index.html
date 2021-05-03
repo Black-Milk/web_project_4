@@ -36,19 +36,20 @@
         <ul class="cards__grid"></ul>
     </section>
 
-    <div class="popup">
+<!--edit-profile modal-->
+    <div class="popup popup_type_edit-profile">
         <div class="popup__container">
-            <button class="popup__exit-button" type="button"></button>
-            <form class="form" name="profile-info" action="#">
+            <button class="popup__exit-button popup_close_edit-profile" type="button"></button>
+            <form class="form form__edit-profile" name="profile-info" action="#">
                 <h2 class="form__header">Edit profile</h2>
                 <fieldset class="form__fields">
-                    <label for="name">
-                        <input type="text" class="form__input form__input_text_title" id="name" name="name"
+                    <label for="profile-name">
+                        <input type="text" class="form__input form__input_text_title" id="profile-name" name="name"
                                placeholder="Name"
                                value="Jacques Cousteau" required>
                     </label>
-                    <label for="job">
-                        <input type="text" class="form__input form__input_text_subtitle" id="job" name="job"
+                    <label for="profile-job">
+                        <input type="text" class="form__input form__input_text_subtitle" id="profile-job" name="job"
                                placeholder="Job"
                                value="Explorer" required>
                     </label>
@@ -58,6 +59,39 @@
         </div>
     </div>
 
+<!--add-card modal-->
+    <div class="popup popup_type_add-card">
+        <div class="popup__container">
+            <button class="popup__exit-button popup_close_add-card" type="button"></button>
+            <form class="form form__add-card" name="card-info" action="#">
+                <h2 class="form__header">Add Card</h2>
+                <fieldset class="form__fields">
+                    <label for="card-name">
+                        <input type="text" class="form__input form__input_text_card-name" id="card-name" name="card-name"
+                               placeholder="Name"
+                               value="" required>
+                    </label>
+                    <label for="card-link">
+                        <input type="url" class="form__input form__input_text_image-link" id="card-link" name="card-link"
+                               placeholder="Link"
+                               value="" required>
+                    </label>
+                    <button class="form__submit-button" type="submit" value="Create">Create</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+<!--preview modal-->
+    <div class="popup popup_type_preview">
+        <div class="popup__container popup__container_content_preview">
+            <button class="popup__exit-button popup_close_preview" type="button"></button>
+            <img class="popup__image" src="" alt="">
+            <p class="popup__image-title"></p>
+        </div>
+    </div>
+
+
 </main>
 <footer class="footer">
     <p class="footer__copyright">© 2021 Around The U.S.</p>
@@ -66,7 +100,8 @@
 <!--template elements-->
 <template id="card-template">
     <li class="card">
-        <div class="card__image" style=""></div>
+        <button type="button" class="card__delete-button"></button>
+        <div class="card__image"></div>
         <div class="card__info">
             <h2 class="card__title"></h2>
             <button class="card__like-button" type="button"></button>
