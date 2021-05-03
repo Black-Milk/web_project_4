@@ -1,3 +1,4 @@
+
 //Declarations
 const initialCards = [
     {
@@ -26,13 +27,8 @@ const initialCards = [
     }
 ];
 
-
+//Wrapper
 const cardGrid = document.querySelector(".cards__grid");
-
-
-const profileTitleValue = document.querySelector(".profile__title");
-const profileSubtitleValue = document.querySelector(".profile__subtitle");
-
 
 //Modals
 const profileModal = document.querySelector('.popup_type_edit-profile');
@@ -41,6 +37,9 @@ const previewModal = document.querySelector('.popup_type_preview');
 
 
 //Other DOM Elements
+const profileTitleValue = document.querySelector(".profile__title");
+const profileSubtitleValue = document.querySelector(".profile__subtitle");
+
 const profileForm = document.querySelector('.form__edit-profile');
 const profileFormTitleInput = profileForm.querySelector('.form__input_text_title');
 const profileFormSubtitleInput = profileForm.querySelector('.form__input_text_subtitle');
@@ -52,14 +51,10 @@ const cardFormLinkInput = cardForm.querySelector('.form__input_text_image-link')
 const previewImageTitle = previewModal.querySelector('.popup__image-title');
 
 //Buttons
-
 const addCardButton = document.querySelector('.profile__add-button');
 const addCardModalExitButton = addCardModal.querySelector('.popup_close_add-card');
-
-
 const profileEditButton = document.querySelector('.profile__edit-button');
 const profileModalExitButton = profileModal.querySelector('.popup_close_edit-profile');
-
 const previewModalExitButton = previewModal.querySelector('.popup_close_preview');
 
 
@@ -120,7 +115,7 @@ const createCardElement = (card) => {
     const cardDeleteButton = cardElement.querySelector('.card__delete-button');
 
     cardImage.addEventListener('click', () => onImagePreview(card));
-    cardLikeButton.addEventListener('click', toggleLikeButton);
+    cardLikeButton.addEventListener('click', (evt) => toggleLikeButton(evt));
     cardDeleteButton.addEventListener('click', () => cardElement.remove());
 
     return cardElement;
