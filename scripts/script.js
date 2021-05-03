@@ -70,6 +70,8 @@ const toggleModal = (modal) => {
 const onImagePreview = (card) => {
     const popupImage = previewModal.querySelector('.popup__image');
     popupImage.src = card.link;
+    //replace whitespace w/ hyphens
+    popupImage.alt = card.name.toLowerCase().replace(/\s/g,'-');
     previewImageTitle.textContent = card.name;
     toggleModal(previewModal);
 }
