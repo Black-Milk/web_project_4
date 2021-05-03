@@ -40,11 +40,11 @@ const previewModal = document.querySelector('.popup_type_preview');
 const profileTitleValue = document.querySelector(".profile__title");
 const profileSubtitleValue = document.querySelector(".profile__subtitle");
 
-const profileForm = document.querySelector('.form__edit-profile');
+const profileForm = document.querySelector('.form_type_edit-profile');
 const profileFormTitleInput = profileForm.querySelector('.form__input_text_title');
 const profileFormSubtitleInput = profileForm.querySelector('.form__input_text_subtitle');
 
-const cardForm = document.querySelector('.form__add-card');
+const cardForm = document.querySelector('.form_type_add-card');
 const cardFormNameInput = cardForm.querySelector('.form__input_text_card-name');
 const cardFormLinkInput = cardForm.querySelector('.form__input_text_image-link');
 
@@ -52,10 +52,10 @@ const previewImageTitle = previewModal.querySelector('.popup__image-title');
 
 //Buttons
 const addCardButton = document.querySelector('.profile__add-button');
-const addCardModalExitButton = addCardModal.querySelector('.popup_close_add-card');
+const addCardModalExitButton = addCardModal.querySelector('.popup__exit-button_target_add-card');
 const profileEditButton = document.querySelector('.profile__edit-button');
-const profileModalExitButton = profileModal.querySelector('.popup_close_edit-profile');
-const previewModalExitButton = previewModal.querySelector('.popup_close_preview');
+const profileModalExitButton = profileModal.querySelector('.popup__exit-button_target_edit-profile');
+const previewModalExitButton = previewModal.querySelector('.popup__exit-button_target_preview');
 
 
 //Functions
