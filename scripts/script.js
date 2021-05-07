@@ -49,6 +49,7 @@ const cardFormNameInput = cardForm.querySelector('.form__input_text_card-name');
 const cardFormLinkInput = cardForm.querySelector('.form__input_text_image-link');
 
 const previewImageTitle = previewModal.querySelector('.popup__image-title');
+const popupImage = previewModal.querySelector('.popup__image');
 
 //Buttons
 const addCardButton = document.querySelector('.profile__add-button');
@@ -61,14 +62,18 @@ const previewModalExitButton = previewModal.querySelector('.popup__exit-button_t
 //Functions
 const toggleModal = (modal) => {
     modal.classList.toggle('popup_visible');
-    if (modal.classList.contains('popup_visible')) {
+}
+
+const onEditProfile = (modal) => {
+    if (modal.classList.contains('popup_visible')){
         profileFormTitleInput.value = profileTitleValue.textContent;
         profileFormSubtitleInput.value = profileSubtitleValue.textContent;
     }
+    toggleModal(modal);
 }
 
 const onImagePreview = (card) => {
-    const popupImage = previewModal.querySelector('.popup__image');
+
     popupImage.src = card.link;
     //replace whitespace w/ hyphens
     popupImage.alt = card.name.toLowerCase().replace(/\s/g,'-');
@@ -133,8 +138,8 @@ const renderCard = (card, wrapper) => {
 addCardButton.addEventListener('click', () => toggleModal(addCardModal));
 addCardModalExitButton.addEventListener('click', () => toggleModal(addCardModal));
 cardForm.addEventListener('submit', fillCardForm);
-profileEditButton.addEventListener('click', () => toggleModal(profileModal));
-profileModalExitButton.addEventListener('click', () => toggleModal(profileModal));
+profileEditButton.addEventListener('click', () => onEditProfile(profileModal));
+profileModalExitButton.addEventListener('click', () => onEditProfile(profileModal));
 profileForm.addEventListener('submit', fillProfileForm);
 previewModalExitButton.addEventListener('click', () => toggleModal(previewModal));
 
