@@ -46,12 +46,12 @@
                     <label for="profile-name">
                         <input type="text" class="form__input form__input_text_title" id="profile-name" name="name"
                                placeholder="Name"
-                               value="Jacques Cousteau" required>
+                               value="Jacques Cousteau" required minlength="2" maxlength="40">
                     </label>
                     <label for="profile-job">
                         <input type="text" class="form__input form__input_text_subtitle" id="profile-job" name="job"
                                placeholder="Job"
-                               value="Explorer" required>
+                               value="Explorer" required minlength="2" maxlength="400">
                     </label>
                     <button class="form__submit-button" type="submit" value="Save">Save</button>
                 </fieldset>
@@ -96,7 +96,8 @@
 <footer class="footer">
     <p class="footer__copyright">© 2021 Around The U.S.</p>
 </footer>
-<script src="./scripts/script.js" defer></script>
+<script src="./scripts/script.js"></script>
+<script src="./scripts/validation.js"></script>
 <!--template elements-->
 <template id="card-template">
     <li class="card">
