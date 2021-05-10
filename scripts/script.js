@@ -81,6 +81,23 @@ const onImagePreview = (card) => {
     toggleModal(previewModal);
 }
 
+const onClickOutsideModal = (evt) => {
+    const clickArea = evt.target;
+    if (!clickArea.classList.contains("popup_visible")){
+        return;
+    }
+    toggleModal(clickArea);
+}
+
+
+const onEscapeModal = (evt) => {
+    const modal = document.querySelector(".popup_visible");
+    if (evt.key === "Escape"){
+        toggleModal(modal);
+    }
+    evt.target.removeEventListener("keydown", onEscapeModal);
+}
+
 const fillProfileForm = (evt) => {
     evt.preventDefault();
     profileTitleValue.textContent = profileFormTitleInput.value;
@@ -142,6 +159,9 @@ profileEditButton.addEventListener('click', () => onEditProfile(profileModal));
 profileModalExitButton.addEventListener('click', () => onEditProfile(profileModal));
 profileForm.addEventListener('submit', fillProfileForm);
 previewModalExitButton.addEventListener('click', () => toggleModal(previewModal));
+
+document.addEventListener("click", onClickOutsideModal);
+document.addEventListener("keydown", onEscapeModal);
 
 
 initialCards.forEach(card => renderCard(card, cardGrid));
