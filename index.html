@@ -39,8 +39,8 @@
 <!--edit-profile modal-->
     <div class="popup popup_type_edit-profile">
         <div class="popup__container">
-            <button class="popup__exit-button popup_close_edit-profile" type="button"></button>
-            <form class="form form__edit-profile" name="profile-info" action="#">
+            <button class="popup__exit-button popup__exit-button_target_edit-profile" type="button"></button>
+            <form class="form form_type_edit-profile" name="profile-info" action="#">
                 <h2 class="form__header">Edit profile</h2>
                 <fieldset class="form__fields">
                     <label for="profile-name">
@@ -62,8 +62,8 @@
 <!--add-card modal-->
     <div class="popup popup_type_add-card">
         <div class="popup__container">
-            <button class="popup__exit-button popup_close_add-card" type="button"></button>
-            <form class="form form__add-card" name="card-info" action="#">
+            <button class="popup__exit-button popup__exit-button_target_add-card" type="button"></button>
+            <form class="form form_type_add-card" name="card-info" action="#">
                 <h2 class="form__header">Add Card</h2>
                 <fieldset class="form__fields">
                     <label for="card-name">
@@ -85,8 +85,8 @@
 <!--preview modal-->
     <div class="popup popup_type_preview">
         <div class="popup__container popup__container_content_preview">
-            <button class="popup__exit-button popup_close_preview" type="button"></button>
-            <img class="popup__image" src="" alt="">
+            <button class="popup__exit-button popup__exit-button_target_preview" type="button"></button>
+            <img class="popup__image" src="#" alt="null">
             <p class="popup__image-title"></p>
         </div>
     </div>
@@ -109,6 +109,5 @@
     </li>
 </template>
 <script src="./scripts/script.js"></script>
-<script src="./scripts/validation.js"></script>
 </body>
 </html>
