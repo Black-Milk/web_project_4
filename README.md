@@ -45,11 +45,16 @@ HTML, CSS, & Javascript
 │   ├── __header
 │   │   └── form__header.css
 │   ├── __input
-│   │   ├── _text
-│   │   │   ├── form__input_text_subtitle.css
-│   │   │   └── form__input_text_title.css
+│   │   ├── _type
+│   │   │   └── form__input_type_error.css
 │   │   └── form__input.css
+│   ├── __input-error
+│   │   ├── _active
+│   │   │   └── form__input-error_active.css
+│   │   └── form__input-error.css
 │   ├── __submit-button
+│   │   ├── _inactive
+│   │   │   └── form__submit-button_inactive.css
 │   │   └── form__submit-button.css
 │   └── form.css
 ├── header
@@ -92,7 +97,5 @@ HTML, CSS, & Javascript
     ├── __title
     │   └── profile__title.css
     └── profile.css
-
-
 ```
 
