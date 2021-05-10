@@ -46,12 +46,14 @@
                     <label for="profile-name">
                         <input type="text" class="form__input form__input_text_title" id="profile-name" name="name"
                                placeholder="Name"
-                               value="Jacques Cousteau" required>
+                               value="Jacques Cousteau" required minlength="2" maxlength="40">
+                        <span class="form__input-error" id="profile-name-error"></span>
                     </label>
                     <label for="profile-job">
                         <input type="text" class="form__input form__input_text_subtitle" id="profile-job" name="job"
                                placeholder="Job"
-                               value="Explorer" required>
+                               value="Explorer" required minlength="2" maxlength="400">
+                        <span class="form__input-error" id="profile-job-error"></span>
                     </label>
                     <button class="form__submit-button" type="submit" value="Save">Save</button>
                 </fieldset>
@@ -70,11 +72,13 @@
                         <input type="text" class="form__input form__input_text_card-name" id="card-name" name="card-name"
                                placeholder="Name"
                                value="" required>
+                        <span class="form__input-error" id="card-name-error"></span>
                     </label>
                     <label for="card-link">
                         <input type="url" class="form__input form__input_text_image-link" id="card-link" name="card-link"
                                placeholder="Link"
                                value="" required>
+                        <span class="form__input-error" id="card-link-error"></span>
                     </label>
                     <button class="form__submit-button" type="submit" value="Create">Create</button>
                 </fieldset>
@@ -82,7 +86,7 @@
         </div>
     </div>
 
-<!--preview modal-->
+<!--image preview modal-->
     <div class="popup popup_type_preview">
         <div class="popup__container popup__container_content_preview">
             <button class="popup__exit-button popup__exit-button_target_preview" type="button"></button>
@@ -90,8 +94,6 @@
             <p class="popup__image-title"></p>
         </div>
     </div>
-
-
 </main>
 <footer class="footer">
     <p class="footer__copyright">© 2021 Around The U.S.</p>
@@ -108,6 +110,8 @@
         </div>
     </li>
 </template>
+<!--Javascript-->
+<script src="./scripts/validation.js"></script>
 <script src="./scripts/script.js"></script>
 </body>
 </html>
