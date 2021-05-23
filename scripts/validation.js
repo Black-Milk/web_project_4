@@ -2,7 +2,8 @@
 FOR REVIEWER:
 The assignment specifically states that the enableValidation function must take the object represented by validationArtefacts
 as an argument; however, no mention is made of the object being used an argument in the other functions.
-Why is there a need a to pass this is in as argument to other functions if it can be seen as a constant in global scope?
+Why is there a need a to pass this is in as an argument to other functions if it is never modified within their scope?
+It simply remains constant, so what is the benefit of passing it in as an additional argument?
 */
 
 const validationArtefacts = {
@@ -15,29 +16,29 @@ const validationArtefacts = {
     errorClass: "form__input-error_active"
 };
 
-const showInputError = (formElement, inputElement, errorMessage) => {
+const showInputError = (formElement, inputElement, errorMessage, artefacts) => {
     const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
     console.log(errorElement.textContent);
-    inputElement.classList.add(validationArtefacts.inputErrorClass);
+    inputElement.classList.add(artefacts.inputErrorClass);
     errorElement.textContent = errorMessage;
-    errorElement.classList.add(validationArtefacts.errorClass);
+    errorElement.classList.add(artefacts.errorClass);
 };
 
 
-const hideInputError = (formElement, inputElement) => {
+const hideInputError = (formElement, inputElement, artefacts) => {
     const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-    inputElement.classList.remove(validationArtefacts.inputErrorClass);
-    errorElement.classList.remove(validationArtefacts.errorClass);
+    inputElement.classList.remove(artefacts.inputErrorClass);
+    errorElement.classList.remove(artefacts.errorClass);
     errorElement.textContent = "";
 };
 
 
-const checkInputValidity = (formElement, inputElement) => {
+const checkInputValidity = (formElement, inputElement, artefacts) => {
     if (!inputElement.validity.valid) {
-        showInputError(formElement, inputElement, inputElement.validationMessage);
+        showInputError(formElement, inputElement, inputElement.validationMessage, artefacts);
 
     } else {
-        hideInputError(formElement, inputElement);
+        hideInputError(formElement, inputElement, artefacts);
     }
 };
 
@@ -48,24 +49,24 @@ const hasInvalidInput = (inputList) => {
     });
 };
 
-const toggleButtonState = (inputList, buttonElement) => {
+const toggleButtonState = (inputList, buttonElement, artefacts) => {
     if (hasInvalidInput(inputList)) {
-        buttonElement.classList.add(validationArtefacts.inactiveButtonClass);
+        buttonElement.classList.add(artefacts.inactiveButtonClass);
         buttonElement.disabled = true;
     } else {
-        buttonElement.classList.remove(validationArtefacts.inactiveButtonClass);
+        buttonElement.classList.remove(artefacts.inactiveButtonClass);
         buttonElement.disabled = false;
     }
 };
 
-const setEventListeners = (formElement) => {
-    const inputList = Array.from(formElement.querySelectorAll(validationArtefacts.inputSelector));
-    const buttonElement = formElement.querySelector(validationArtefacts.submitButtonSelector);
-    toggleButtonState(inputList, buttonElement);
+const setEventListeners = (formElement, artefacts) => {
+    const inputList = Array.from(formElement.querySelectorAll(artefacts.inputSelector));
+    const buttonElement = formElement.querySelector(artefacts.submitButtonSelector);
+    toggleButtonState(inputList, buttonElement, artefacts);
     inputList.forEach((inputElement) => {
         inputElement.addEventListener("input", () => {
-            checkInputValidity(formElement, inputElement);
-            toggleButtonState(inputList, buttonElement);
+            checkInputValidity(formElement, inputElement, artefacts);
+            toggleButtonState(inputList, buttonElement, artefacts);
         });
     });
 };
@@ -78,7 +79,7 @@ const enableValidation = (artefacts) => {
         });
         const fieldSetList = Array.from(formElement.querySelectorAll(artefacts.formFieldSelector));
         fieldSetList.forEach((fieldset) => {
-            setEventListeners(fieldset);
+            setEventListeners(fieldset, artefacts);
         });
     });
 };
