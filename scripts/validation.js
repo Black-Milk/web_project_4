@@ -1,3 +1,10 @@
+/*
+FOR REVIEWER:
+The assignment specifically states that the enableValidation function must take the object represented by validationArtefacts
+as an argument; however, no mention is made of the object being used an argument in the other functions.
+Why is there a need a to pass this is in as argument to other functions if it can be seen as a constant in global scope?
+*/
+
 const validationArtefacts = {
     formSelector: ".form",
     formFieldSelector: ".form__fields",
@@ -8,19 +15,19 @@ const validationArtefacts = {
     errorClass: "form__input-error_active"
 };
 
-const showInputError = (formElement, inputElement, errorMessage, artefacts) => {
+const showInputError = (formElement, inputElement, errorMessage) => {
     const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
     console.log(errorElement.textContent);
-    inputElement.classList.add(artefacts.inputErrorClass);
+    inputElement.classList.add(validationArtefacts.inputErrorClass);
     errorElement.textContent = errorMessage;
-    errorElement.classList.add(artefacts.errorClass);
+    errorElement.classList.add(validationArtefacts.errorClass);
 };
 
 
-const hideInputError = (formElement, inputElement, artefacts) => {
+const hideInputError = (formElement, inputElement) => {
     const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-    inputElement.classList.remove(artefacts.inputErrorClass);
-    errorElement.classList.remove(artefacts.errorClass);
+    inputElement.classList.remove(validationArtefacts.inputErrorClass);
+    errorElement.classList.remove(validationArtefacts.errorClass);
     errorElement.textContent = "";
 };
 
@@ -41,19 +48,19 @@ const hasInvalidInput = (inputList) => {
     });
 };
 
-const toggleButtonState = (inputList, buttonElement, artefacts) => {
+const toggleButtonState = (inputList, buttonElement) => {
     if (hasInvalidInput(inputList)) {
-        buttonElement.classList.add(artefacts.inactiveButtonClass);
+        buttonElement.classList.add(validationArtefacts.inactiveButtonClass);
         buttonElement.disabled = true;
     } else {
-        buttonElement.classList.remove(artefacts.inactiveButtonClass);
+        buttonElement.classList.remove(validationArtefacts.inactiveButtonClass);
         buttonElement.disabled = false;
     }
 };
 
-const setEventListeners = (formElement, artefacts) => {
-    const inputList = Array.from(formElement.querySelectorAll(artefacts.inputSelector));
-    const buttonElement = formElement.querySelector(artefacts.submitButtonSelector);
+const setEventListeners = (formElement) => {
+    const inputList = Array.from(formElement.querySelectorAll(validationArtefacts.inputSelector));
+    const buttonElement = formElement.querySelector(validationArtefacts.submitButtonSelector);
     toggleButtonState(inputList, buttonElement);
     inputList.forEach((inputElement) => {
         inputElement.addEventListener("input", () => {
@@ -77,4 +84,3 @@ const enableValidation = (artefacts) => {
 };
 
 enableValidation(validationArtefacts);
-
