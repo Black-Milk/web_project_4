@@ -1,4 +1,3 @@
-
 //Declarations
 const initialCards = [
     {
@@ -34,6 +33,7 @@ const cardGrid = document.querySelector(".cards__grid");
 const profileModal = document.querySelector('.popup_type_edit-profile');
 const addCardModal = document.querySelector('.popup_type_add-card');
 const previewModal = document.querySelector('.popup_type_preview');
+const modals = document.querySelectorAll('.popup');
 
 
 //Other DOM Elements
@@ -62,10 +62,17 @@ const previewModalExitButton = previewModal.querySelector('.popup__exit-button_t
 //Functions
 const toggleModal = (modal) => {
     modal.classList.toggle('popup_visible');
+    if (modal.classList.contains('popup_visible')) {
+        document.addEventListener('keydown', onEscapeModal);
+        // console.log('Escape Key Listener Added');
+    } else {
+        document.removeEventListener('keydown', onEscapeModal);
+        // console.log('Escape Key Listener Removed');
+    }
 }
 
 const onEditProfile = (modal) => {
-    if (modal.classList.contains('popup_visible')){
+    if (modal.classList.contains('popup_visible')) {
         profileFormTitleInput.value = profileTitleValue.textContent;
         profileFormSubtitleInput.value = profileSubtitleValue.textContent;
     }
@@ -76,26 +83,35 @@ const onImagePreview = (card) => {
 
     popupImage.src = card.link;
     //replace whitespace w/ hyphens
-    popupImage.alt = card.name.toLowerCase().replace(/\s/g,'-');
+    popupImage.alt = card.name.toLowerCase().replace(/\s/g, '-');
     previewImageTitle.textContent = card.name;
     toggleModal(previewModal);
 }
 
+
 const onClickOutsideModal = (evt) => {
     const clickArea = evt.target;
-    if (!clickArea.classList.contains("popup_visible")){
+    if (!clickArea.classList.contains("popup_visible")) {
         return;
     }
+    // console.log("Clicked Outside Modal Area");
     toggleModal(clickArea);
 }
 
-
-const onEscapeModal = (evt) => {
-    const modal = document.querySelector(".popup_visible");
-    if (evt.key === "Escape"){
+const onClickExitModalButton = (evt) => {
+    if (evt.target.classList.contains('popup__exit-button')) {
+        const modal = document.querySelector(".popup_visible");
+        // console.log("Clicked Modal Exit Button")
         toggleModal(modal);
     }
-    evt.target.removeEventListener("keydown", onEscapeModal);
+}
+
+const onEscapeModal = (evt) => {
+    if (evt.key === "Escape") {
+        const modal = document.querySelector(".popup_visible");
+        // console.log("Escape Key Pressed while Modal Open")
+        toggleModal(modal);
+    }
 }
 
 const fillProfileForm = (evt) => {
@@ -107,14 +123,13 @@ const fillProfileForm = (evt) => {
 
 const fillCardForm = (evt) => {
     evt.preventDefault();
-
     const newCard = {
         name: cardFormNameInput.value,
         link: cardFormLinkInput.value
     };
-
     renderCard(newCard, cardGrid);
     toggleModal(addCardModal);
+    cardForm.reset();
 }
 
 
@@ -153,17 +168,13 @@ const renderCard = (card, wrapper) => {
 
 // Handlers
 addCardButton.addEventListener('click', () => toggleModal(addCardModal));
-addCardModalExitButton.addEventListener('click', () => toggleModal(addCardModal));
 cardForm.addEventListener('submit', fillCardForm);
 profileEditButton.addEventListener('click', () => onEditProfile(profileModal));
-profileModalExitButton.addEventListener('click', () => onEditProfile(profileModal));
 profileForm.addEventListener('submit', fillProfileForm);
-previewModalExitButton.addEventListener('click', () => toggleModal(previewModal));
-
-document.addEventListener("click", onClickOutsideModal);
-document.addEventListener("keydown", onEscapeModal);
-
-
+modals.forEach((modal) => {
+    modal.addEventListener('click', onClickExitModalButton);
+    modal.addEventListener('click', onClickOutsideModal);
+})
 initialCards.forEach(card => renderCard(card, cardGrid));
 
 

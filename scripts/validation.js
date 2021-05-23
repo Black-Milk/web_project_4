@@ -8,19 +8,19 @@ const validationArtefacts = {
     errorClass: "form__input-error_active"
 };
 
-const showInputError = (formElement, inputElement, errorMessage) => {
+const showInputError = (formElement, inputElement, errorMessage, artefacts) => {
     const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
     console.log(errorElement.textContent);
-    inputElement.classList.add(validationArtefacts.inputErrorClass);
+    inputElement.classList.add(artefacts.inputErrorClass);
     errorElement.textContent = errorMessage;
-    errorElement.classList.add(validationArtefacts.errorClass);
+    errorElement.classList.add(artefacts.errorClass);
 };
 
 
-const hideInputError = (formElement, inputElement) => {
+const hideInputError = (formElement, inputElement, artefacts) => {
     const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-    inputElement.classList.remove(validationArtefacts.inputErrorClass);
-    errorElement.classList.remove(validationArtefacts.errorClass);
+    inputElement.classList.remove(artefacts.inputErrorClass);
+    errorElement.classList.remove(artefacts.errorClass);
     errorElement.textContent = "";
 };
 
@@ -41,19 +41,19 @@ const hasInvalidInput = (inputList) => {
     });
 };
 
-const toggleButtonState = (inputList, buttonElement) => {
+const toggleButtonState = (inputList, buttonElement, artefacts) => {
     if (hasInvalidInput(inputList)) {
-        buttonElement.classList.add(validationArtefacts.inactiveButtonClass);
+        buttonElement.classList.add(artefacts.inactiveButtonClass);
         buttonElement.disabled = true;
     } else {
-        buttonElement.classList.remove(validationArtefacts.inactiveButtonClass);
+        buttonElement.classList.remove(artefacts.inactiveButtonClass);
         buttonElement.disabled = false;
     }
 };
 
-const setEventListeners = (formElement) => {
-    const inputList = Array.from(formElement.querySelectorAll(validationArtefacts.inputSelector));
-    const buttonElement = formElement.querySelector(validationArtefacts.submitButtonSelector);
+const setEventListeners = (formElement, artefacts) => {
+    const inputList = Array.from(formElement.querySelectorAll(artefacts.inputSelector));
+    const buttonElement = formElement.querySelector(artefacts.submitButtonSelector);
     toggleButtonState(inputList, buttonElement);
     inputList.forEach((inputElement) => {
         inputElement.addEventListener("input", () => {
@@ -69,7 +69,7 @@ const enableValidation = (artefacts) => {
         formElement.addEventListener("submit", (evt) => {
             evt.preventDefault();
         });
-        const fieldSetList = Array.from(formElement.querySelectorAll(validationArtefacts.formFieldSelector));
+        const fieldSetList = Array.from(formElement.querySelectorAll(artefacts.formFieldSelector));
         fieldSetList.forEach((fieldset) => {
             setEventListeners(fieldset);
         });
