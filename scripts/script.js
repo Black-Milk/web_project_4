@@ -130,6 +130,9 @@ const fillCardForm = (evt) => {
     renderCard(newCard, cardGrid);
     toggleModal(addCardModal);
     cardForm.reset();
+    const submitButton = cardForm.querySelector('.form__submit-button');
+    submitButton.classList.add('form__submit-button_inactive');
+    submitButton.disabled = true;
 }
 
 
